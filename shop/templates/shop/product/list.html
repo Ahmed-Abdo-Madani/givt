@@ -1,0 +1,44 @@
+{% extends 'shop/index.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="header">
+
+    <div id="categories">
+        <h2>Categories :</h2>
+        <ul id="cat-list">
+            <li id="cat-item">
+                <a href="{% url 'shop:product_list' %}">All</a>
+            </li>
+            {% for c in categories %}
+                <li id="cat-item">
+                    <a href="{{ c.get_absolute_url }}">{{ c.name }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>    
+<div class="main">
+    <ul id="item-list">
+        {% for product in products %}
+        <li class="item">
+            <a id="card-image" href="{{ product.get_absolute_url }}">
+                <img  src="{% if product.image %}{{ product.image.url }}{% else %}{% static 'images/no_img.png' %}{% endif %}" alt="Product Image">
+            </a>
+            <a id="item-info" href="{{ product.get_absolute_url }}">
+                <h2>{{ product.name }}</h2>
+                <br>${{product.price}}
+                
+            </a>
+            <a id="app3d" href="{{ product.get_absolute_url }}">
+            </a>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+<footer>
+    <p>Effort Pay's</p>
+</footer>
+
+{% endblock %}
