@@ -3,14 +3,14 @@
 
     var renderer = new THREE.WebGLRenderer();
     renderer.setSize( window.innerWidth/3, window.innerHeight/3 );
-    //document.body.appendChild(renderer.domElement);
-    let allImages = document.querySelector('#card-image');
-   /* for (let x in allImages){
+    document.body.appendChild(renderer.domElement);
+   /*  let allImages = document.querySelector('#card-image');
+   for (let x in allImages){
       console.log(x);
       allImages[x].appendChild(renderer.domElement);
-    }*/
+    }
       console.log(allImages);
-      allImages.appendChild(renderer.domElement);
+      allImages.appendChild(renderer.domElement);*/
       
   
   /*  var loader = new GLTFLoader();
