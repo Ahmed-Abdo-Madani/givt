@@ -9,8 +9,9 @@
       console.log(x);
       allImages[x].appendChild(renderer.domElement);
     }*/
+      console.log(allImages);
       allImages.appendChild(renderer.domElement);
-
+      
   
   /*  var loader = new GLTFLoader();
 
