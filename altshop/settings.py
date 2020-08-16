@@ -150,3 +150,5 @@ LOGGING = {
         },
     },
 }
+
+CART_SESSION_ID = 'cart'
