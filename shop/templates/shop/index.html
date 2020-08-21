@@ -91,6 +91,16 @@
 						</script>
 						<!----//search-scripts---->
 				    <ul class="icon1 sub-icon1 profile_img">
+						{% with total_items=cart|length %}
+							{% if total_items > 0 %}
+							Your cart:
+							<a href="{% url "cart:cart_detail" %}">
+							{{ total_items }} item{{ total_items|pluralize }},
+							${{ cart.get_total_price }}</a>
+							{% else %}
+							Your cart is empty.
+							{% endif %}
+						{% endwith %}
 					 <li><a class="active-icon c1" href="#"> </a>
 						<ul class="sub-icon1 list">
 						  <div class="product_control_buttons">
