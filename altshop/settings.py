@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 
 import os
 import django_heroku
+import braintree
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -41,6 +42,7 @@ INSTALLED_APPS = [
     'shop.apps.ShopConfig',
     'cart.apps.CartConfig',
     'orders.apps.OrdersConfig',
+    'payment.apps.PaymentConfig',
 ]
 
 MIDDLEWARE = [
@@ -140,3 +142,15 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 django_heroku.settings(locals())
 
 CART_SESSION_ID = 'cart'
+
+# Braintree settings
+BRAINTREE_MERCHANT_ID = '6pgm5sbbbzzpns3b' # Merchant ID
+BRAINTREE_PUBLIC_KEY = 'ztks5f857crf4jz9' # Public Key
+BRAINTREE_PRIVATE_KEY = 'a3db6efc7f6a877e9dac5d3dc583d69b' # Private key
+
+BRAINTREE_CONF = braintree.Configuration(
+braintree.Environment.Sandbox,
+BRAINTREE_MERCHANT_ID,
+BRAINTREE_PUBLIC_KEY,
+BRAINTREE_PRIVATE_KEY
+)
