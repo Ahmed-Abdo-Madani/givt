@@ -4,20 +4,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://discoverthreejs.com/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href={% static "css/detailsPage.css" %}>
+    <script src={% static "js/vendor/three/three.js" %}></script>
+    <script src={% static "js/vendor/three/OrbitControls.js" %}></script>
+    <script src={% static "js/vendor/three/GLTFLoader.js" %}></script>
     <title>{{ product.name }} Details</title>
 </head>
 <body>
     
-    <div class="grid-container">
-        <div class="cards-container"> 
-            <div class="tabs">Detail</div>
-            <div class="tabs">Detail</div>
-            <div class="tabs">Detail</div>
-            <div class="tabs">Detail</div>
-            <div class="tabs">Detail</div>
+    
+    <div class="navbar">#Logo</div>
+    <div  class="product-image">
+           <div id="scene-container"></div>
         </div>
-    </div>
+    <div class="product-details">
+            <h1>faberge egg</h1>
+            <h2>
+                <a href="#">
+                Wtf is This!!
+                </a>
+            </h2>
+            <p class="price">$10</p>
+            <p class="desc"> Hi Doni,
+                To everyone that supported our drive in August we just want to say a big THANK YOU! 
+                Really, thank you again for being here with us at Free-eBooks in support of independent writers around the world and for freedom and choice.
+                We literally serve MILLIONS of readers like you but run on a fraction of what other big sites spend. And while a very small fraction upgrade to be V.I.P. members, the majority do pay anything at all.
+                Everyone should have access to education, entertainment -- for FREE without censorship, without restrictions and without limitation to live with the "The RIGHT to Read!"
+                It only takes a second to contribute whatever you can and everyone wins through here:
+                >>> https://www.free-ebooks.net/partner</p>
+           
+            </div>
+    <div class="carousel">
+        <h2>Popular On Givt</h2>
+        <div class="swiper-container">
+         <div class="swiper-wrapper">
+            {% for product in products %}
+            <div class="swiper-slide">
+                <a href="{{ product.get_absolute_url }}">
+                    <img src="{% if product.image %}{{ product.image.url }}{% else %}{% static 'images/no_img.png' %}{% endif %}" alt="{{ product.name}">
+                </a>
+            </div>
+            {% endfor %}
+      <!-- Arrows -->
+  <div class="swiper-button-next"></div>
+  <div class="swiper-button-prev"></div>
+  </div>
+        </div>
+            </div>
+    
+    <div class="footer">#footer</div>
 
+    <script src={% static "js/app.js" %}></script>
 </body>
 </html>

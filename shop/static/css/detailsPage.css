@@ -1,53 +1,58 @@
-:root {
-    font-size: 16px;
-    font-family: Arial, Helvetica, sans-serif;
-    --text-primary: #4e4c4c;
-    --text-secondary: #000000;
-    --bg-primary: #ebebeb;
-    --bg-secondary: #2ed1ee;
-    --border-radious: 2rem;
-    --main-margin: 1rem;
-    --transition-speed: 600ms;
-    --the-box-shadow:0.1rem 1rem 3rem 0.01rem rgba(0, 0, 0, 0.274) ;  
-}
+    :root {
+        --darkcolor: rgb(44, 44, 44);
+        --lightcolor: rgb(68, 68, 68);
+        --midcolor: rgb(54, 54, 54);
+    }
+    body {
+        
+        color: white;
+        margin: 0;
+        background-color: var(--midcolor);
+        width: 100vw;
+        display: grid;
+        grid-template-columns: repeat(4 , 1fr) ;
+        grid-template-rows: repeat(7 , minmax(100px , 600px));
+        grid-template-areas: 
+        "navbar navbar navbar navbar"
+        "main main main main"
+        "main main main main"
+        "main main main main"
+        ". details details ."
+        "carousel carousel carousel carousel"
+        "footer footer footer footer";
+    }
+    
+    .navbar {
+        grid-area: navbar;
+        background-color: var(--darkcolor);
+    }
+   
+    .product-image {
+        grid-area: main;
+        width: 100vw;
+        height: 50vh;
+        padding: 10px;
+    }
+    #scene-container {
+        width: 100%;
+        height: 100%;
+    }
+   
+    .product-details {
+        padding: 10px;
+        grid-area: details;
+        background-color: var(--lightcolor);
+        display: flex;
+        flex-direction: column;
+    }
 
-body {
-    margin: 0;
-    padding: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: var(--text-secondary);
+    .carousel {
+        grid-area: carousel;
+    }
 
-}
-.grid-container {
-    display: grid;
-    grid-auto-flow: row;
-    grid-gap: 10px;
-}
-.grid-container > div{
-    background-color: var(--bg-secondary);
-}
-.cards-container > div{
-    margin: 5px;
-    height: 250px;
-    width: 150px;
-    background-color: var(--text-primary);
-}
-.cards-container {
-    display: grid;
-    grid-auto-flow: row;
-    grid-gap: 5px;
+    .footer {
+        grid-area: footer;
+        background-color:var(--darkcolor);
+    }
 
-    background-color: #8cffa0;
-    padding: 10px;
-}
-#nav {
-    background-color: var(--text-primary);
-}
-#main {
-
-}
-#footer {
-
-
-}
+   
