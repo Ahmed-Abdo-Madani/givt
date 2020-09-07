@@ -1,0 +1,88 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href={% static "css/homePage.css" %}>
+      <link rel="stylesheet" href={% static "js/package/css/swiper.min.css" %}>
+    <title> Givt's For Every One </title>
+</head>
+<body>
+    <div class="grid-container">
+        <div id="nav">
+
+            <img src="https://img.icons8.com/wired/64/000000/g.png"/>
+            <img src="https://img.icons8.com/ios/100/000000/favorite-cart.png"/>
+            <img src="https://img.icons8.com/material-rounded/96/000000/user-male-circle.png"/>
+
+        </div>
+        <div class="hero">
+            <img src={% static "images/hero1.jpg" %} alt="Poster">
+        </div>
+        <div class="carousel">
+
+        <h2>Popular On Givt</h2>
+        <div class="swiper-container">
+         <div class="swiper-wrapper">
+            {% for product in products %}
+            <div class="swiper-slide">
+                <a href="{{ product.get_absolute_url }}">
+                    <img src="{% if product.image %}{{ product.image.url }}{% else %}{% static 'images/no_img.png' %}{% endif %}" alt="{{ product.name}">
+                </a>
+            </div>
+            {% endfor %}
+      <!-- Arrows -->
+  <div class="swiper-button-next"></div>
+  <div class="swiper-button-prev"></div>
+  </div>
+
+        </div>
+        <div id="main"> 
+            <div class="cards-container">
+                <div class="card">
+                    <img src={% static "images/new1.jpg" %} alt="Poster">
+                </div>
+                <div class="card">
+                    <img src={% static "images/new2.jpg" %} alt="Poster">
+                </div>
+                <div class="card">
+                    <img src={% static "images/new3.jpg" %} alt="Poster">
+                </div>
+                <div class="card">
+                    <img src={% static "images/new4.jpg" %} alt="Poster">
+                </div>
+                <div class="card">
+                    <img src={% static "images/new5.jpg" %} alt="Poster">
+                </div>
+                <div class="card">
+                    <img src={% static "images/new6.jpg" %} alt="Poster">
+                </div>
+            </div>
+        </div>
+        <div class="hero">Hero#2</div>
+        <div class="carousel">Carousel#2</div>
+        <div id="footer">
+            The UnderDog
+        </div>
+    </div>
+
+        <!-- Swiper JS -->
+  <script src={% static "js/package/js/swiper.min.js" %}></script>
+
+  <!-- Initialize Swiper -->
+  <script>
+    var swiper = new Swiper('.swiper-container', {
+      slidesPerView: 5,
+      spaceBetween: 10,
+      slidesPerGroup: 6,
+
+     navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+         },
+
+    });
+  </script>
+</body>
+</html>

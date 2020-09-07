@@ -1,0 +1,113 @@
+:root {
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    --text-primary: #4e4c4c;
+    --text-secondary: #000000;
+    --bg-primary: #ebebeb;
+    --bg-secondary: #2ed1ee;
+    --border-radious: 2rem;
+    --main-margin: 1rem;
+    --transition-speed: 600ms;
+    --the-box-shadow:0.1rem 1rem 3rem 0.01rem rgba(0, 0, 0, 0.274) ;  
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--text-secondary);
+    text-align: center;
+
+}
+
+#nav {
+    display: grid;
+    grid-template-columns: 70% 15% 15%;
+    height: 100%;
+    background-color: var(--text-primary);
+    align-items: center;
+}
+
+#nav img {
+    padding-left: 10px;
+    height: 20px;
+    width: auto;
+}
+
+img {
+    height: 100%;
+    width: 100%;
+}
+.grid-container {
+    height: 100vh;
+    display: grid;
+    grid-auto-flow: row;
+    grid-gap: 5px;
+}
+.grid-container > div{
+    background-color: var(--bg-secondary);
+}
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    grid-gap: 5px;
+
+    background-color: #8cffa0;
+    padding: 10px;
+}
+.cards-container > div{
+    
+    background-color: var(--text-primary);
+}
+
+#main {
+
+}
+#footer {
+
+
+}
+.givt {
+
+}
+.swiper-container {
+    width: 100vw;
+  }
+  
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    grid-gap: 5px;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+  
+  .carousel .swiper-slide {
+    -webkit-transition: 250ms all;
+    transition: 250ms all;
+  }
+  
+  .carousel .swiper-slide:hover {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+    z-index: 1;
+  }
+  
+  .carousel .swiper-slide:hover:first-child {
+    margin: 0 30px;
+  }
+  
+  .carousel .swiper-slide:hover:last-child {
+    margin: 0 -30px;
+  }
