@@ -5,24 +5,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href={% static "css/homePage.css" %}>
-      <link rel="stylesheet" href={% static "js/package/css/swiper.min.css" %}>
+    <link rel="stylesheet" href={% static "js/package/css/swiper.min.css" %}>
     <title> Givt's For Every One </title>
 </head>
 <body>
     <div class="grid-container">
         <div id="nav">
-
-            <img src="https://img.icons8.com/wired/64/000000/g.png"/>
-            <img src="https://img.icons8.com/ios/100/000000/favorite-cart.png"/>
-            <img src="https://img.icons8.com/material-rounded/96/000000/user-male-circle.png"/>
-
+            <div class="logo">
+                <h4>Givt</h4>
+            </div>
+            <ul class="nav-links">
+                <li> <a href="#">Home</a> </li>
+                <li> <a href="#">Categories</a> </li>
+                <li> <a href="#">Cart</a> </li>
+                <li> <a href="#">User</a> </li>
+            </ul>
         </div>
         <div class="hero">
             <img src={% static "images/hero1.jpg" %} alt="Poster">
         </div>
-        <div class="carousel">
+    <div class="carousel">
 
-        <h2>Popular On Givt</h2>
+        <h4>Popular On Givt</h4>
         <div class="swiper-container">
          <div class="swiper-wrapper">
             {% for product in products %}
@@ -36,9 +40,8 @@
   <div class="swiper-button-next"></div>
   <div class="swiper-button-prev"></div>
   </div>
-
+</div>
         </div>
-        <div id="main"> 
             <div class="cards-container">
                 <div class="card">
                     <img src={% static "images/new1.jpg" %} alt="Poster">
@@ -57,7 +60,6 @@
                 </div>
                 <div class="card">
                     <img src={% static "images/new6.jpg" %} alt="Poster">
-                </div>
             </div>
         </div>
         <div class="hero">Hero#2</div>
@@ -65,7 +67,7 @@
         <div id="footer">
             The UnderDog
         </div>
-    </div>
+   
 
         <!-- Swiper JS -->
   <script src={% static "js/package/js/swiper.min.js" %}></script>
