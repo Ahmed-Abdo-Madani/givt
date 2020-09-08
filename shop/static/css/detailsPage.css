@@ -10,28 +10,18 @@
         background-color: var(--midcolor);
         width: 100vw;
         display: grid;
-        grid-template-columns: repeat(4 , 1fr) ;
-        grid-template-rows: repeat(7 , minmax(100px , 600px));
-        grid-template-areas: 
-        "navbar navbar navbar navbar"
-        "main main main main"
-        "main main main main"
-        "main main main main"
-        ". details details ."
-        "carousel carousel carousel carousel"
-        "footer footer footer footer";
+        grid-template-columns:  1fr ;
+        justify-items: center;
     }
     
     .navbar {
-        grid-area: navbar;
+        padding: 10px;
         background-color: var(--darkcolor);
     }
    
     .product-image {
-        grid-area: main;
         width: 100vw;
         height: 50vh;
-        padding: 10px;
     }
     #scene-container {
         width: 100%;
@@ -39,20 +29,62 @@
     }
    
     .product-details {
-        padding: 10px;
-        grid-area: details;
+        width: 97vw;
+        padding-left: 10px;
         background-color: var(--lightcolor);
-        display: flex;
-        flex-direction: column;
     }
 
     .carousel {
-        grid-area: carousel;
+        width: 97vw;
+        height: auto;
+        padding: 10px;
     }
 
     .footer {
-        grid-area: footer;
+        padding: 10px;
         background-color:var(--darkcolor);
     }
 
    
+    
+.swiper-container {
+    width: 100%;
+    height: auto;
+  }
+  
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    grid-gap: 5px;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+  
+  .carousel .swiper-slide {
+    -webkit-transition: 250ms all;
+    transition: 250ms all;
+  }
+  
+  .carousel .swiper-slide:hover {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+    z-index: 1;
+  }
+  
+  .carousel .swiper-slide:hover:first-child {
+    margin: 0 30px;
+  }
+  
+  .carousel .swiper-slide:hover:last-child {
+    margin: 0 -30px;
+  }

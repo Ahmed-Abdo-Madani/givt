@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="https://discoverthreejs.com/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href={% static "css/detailsPage.css" %}>
+    <link rel="stylesheet" href={% static "js/package/css/swiper.min.css" %}>
     <script src={% static "js/vendor/three/three.js" %}></script>
     <script src={% static "js/vendor/three/OrbitControls.js" %}></script>
     <script src={% static "js/vendor/three/GLTFLoader.js" %}></script>
@@ -19,20 +20,14 @@
            <div id="scene-container"></div>
         </div>
     <div class="product-details">
-            <h1>faberge egg</h1>
+            <h1>{{ product.name }}</h1>
             <h2>
                 <a href="#">
-                Wtf is This!!
+                    {{ product.category }}
                 </a>
             </h2>
-            <p class="price">$10</p>
-            <p class="desc"> Hi Doni,
-                To everyone that supported our drive in August we just want to say a big THANK YOU! 
-                Really, thank you again for being here with us at Free-eBooks in support of independent writers around the world and for freedom and choice.
-                We literally serve MILLIONS of readers like you but run on a fraction of what other big sites spend. And while a very small fraction upgrade to be V.I.P. members, the majority do pay anything at all.
-                Everyone should have access to education, entertainment -- for FREE without censorship, without restrictions and without limitation to live with the "The RIGHT to Read!"
-                It only takes a second to contribute whatever you can and everyone wins through here:
-                >>> https://www.free-ebooks.net/partner</p>
+            <p class="price">${{ product.price }}</p>
+            <p class="desc"> {{ product.description|linebreaks }}</p>
            
             </div>
     <div class="carousel">
@@ -56,5 +51,23 @@
     <div class="footer">#footer</div>
 
     <script src={% static "js/app.js" %}></script>
+          <!-- Swiper JS -->
+  <script src={% static "js/package/js/swiper.min.js" %}></script>
+
+  <!-- Initialize Swiper -->
+  <script>
+    var swiper = new Swiper('.swiper-container', {
+      slidesPerView: 5,
+      spaceBetween: 10,
+      slidesPerGroup: 6,
+
+     navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+         },
+
+    });
+  </script>
 </body>
+
 </html>
