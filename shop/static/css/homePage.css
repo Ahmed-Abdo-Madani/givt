@@ -19,58 +19,63 @@ body {
   width: 100vw;
   height: 100vh;
   background-color: var(--bg-primary);
-  text-align: center;
+  overflow-x: hidden;
 }
 
 #nav {
-background-color: var(--bg-secondary);
-display: flex;
-justify-content: space-between;
-align-items: center;
-}
-svg {
-height: var(--items-size);
-width: var(--items-size);
-padding-right: 2rem;
-fill: var(--text-primary);
-cursor: pointer;
-}
-.logo h4 {
-margin: var(--items-size);
-padding-right: 2rem;
-cursor: pointer;
-}
-.logo {
-padding-right: 2rem;
-padding-left: 2rem;
-display: flex;
-justify-content: space-between;
-align-items: center;
-color: var(--text-secondary);
-font-size: var(--items-size);
-}
-
-.nav-links a {
-padding-right: 2rem;
-text-decoration: none;
-color: var(--text-primary);
-}
-.nav-links li{
-list-style: none;
+  margin: 1rem 0 1rem ;
+  padding: 0;
 }
 
 .nav-links {
-display: flex;
-justify-content: space-around;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
 }
-
+#burger {
+  margin-left: var(--items-size);
+}
+#givt {
+  margin-left: var(--items-size);
+  margin-right: auto;
+}
+#givt h4 {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: var(--items-size);
+}
+#search {
+  margin-left: auto;
+}
+#cart {
+  margin-right: var(--items-size);
+  margin-left: var(--items-size);
+}
+#user {
+  margin-right: var(--items-size);
+}
+svg {
+  width: var(--items-size);
+  fill: var(--text-primary);
+}
+a {
+  text-decoration: none;
+}
+ul {
+  list-style: none;
+}
 
 img {
   height: 100%;
   width: 100%;
 }
-.grid-container {
 
+.carousel h3 {
+  color: var(--text-primary);
+  margin-left: var(--items-size);
+}
+.grid-container {
   display: grid;
   grid-auto-flow: row;
   grid-gap: 10px;
