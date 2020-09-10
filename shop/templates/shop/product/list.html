@@ -1,4 +1,4 @@
-{% extends 'shop/index.html' %}
+{% extends 'shop/homePage.html' %}
 {% load static %}
 
 {% block content %}
@@ -40,5 +40,55 @@
 <footer>
     <p>Effort Pay's</p>
 </footer>
+
+{% endblock %}
+
+{% block home %}
+<div class="hero">
+    <img src={% static "images/hero1.jpg" %} alt="Poster">
+</div>
+<div class="carousel">
+
+<h4>Popular On Givt</h4>
+<div class="swiper-container">
+ <div class="swiper-wrapper">
+    {% for product in products %}
+    <div class="swiper-slide">
+        <a href="{{ product.get_absolute_url }}">
+            <img src="{% if product.image %}{{ product.image.url }}{% else %}{% static 'images/no_img.png' %}{% endif %}" alt="{{ product.name}">
+        </a>
+    </div>
+    {% endfor %}
+<!-- Arrows -->
+<div class="swiper-button-next"></div>
+<div class="swiper-button-prev"></div>
+</div>
+</div>
+</div>
+    <div class="cards-container">
+        <div class="card">
+            <img src={% static "images/new1.jpg" %} alt="Poster">
+        </div>
+        <div class="card">
+            <img src={% static "images/new2.jpg" %} alt="Poster">
+        </div>
+        <div class="card">
+            <img src={% static "images/new3.jpg" %} alt="Poster">
+        </div>
+        <div class="card">
+            <img src={% static "images/new4.jpg" %} alt="Poster">
+        </div>
+        <div class="card">
+            <img src={% static "images/new5.jpg" %} alt="Poster">
+        </div>
+        <div class="card">
+            <img src={% static "images/new6.jpg" %} alt="Poster">
+    </div>
+</div>
+<div class="hero">Hero#2</div>
+<div class="carousel">Carousel#2</div>
+<div id="footer">
+    The UnderDog
+</div>
 
 {% endblock %}

@@ -1,21 +1,8 @@
+{% extends 'shop/homePage.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="https://discoverthreejs.com/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href={% static "css/detailsPage.css" %}>
-    <link rel="stylesheet" href={% static "js/package/css/swiper.min.css" %}>
-    <script src={% static "js/vendor/three/three.js" %}></script>
-    <script src={% static "js/vendor/three/OrbitControls.js" %}></script>
-    <script src={% static "js/vendor/three/GLTFLoader.js" %}></script>
-    <title>{{ product.name }} Details</title>
-</head>
-<body>
-    
-    
-    <div class="navbar">#Logo</div>
+
+{% block home %}
+
     <div  class="product-image">
            <div id="scene-container"></div>
         </div>
@@ -47,27 +34,5 @@
   </div>
         </div>
             </div>
-    
-    <div class="footer">#footer</div>
-
-    <script src={% static "js/app.js" %}></script>
-          <!-- Swiper JS -->
-  <script src={% static "js/package/js/swiper.min.js" %}></script>
-
-  <!-- Initialize Swiper -->
-  <script>
-    var swiper = new Swiper('.swiper-container', {
-      slidesPerView: 5,
-      spaceBetween: 10,
-      slidesPerGroup: 6,
-
-     navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-         },
-
-    });
-  </script>
-</body>
-
-</html>
+            <script src={% static "js/app.js" %}></script>
+{% endblock %}

@@ -4,70 +4,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://discoverthreejs.com/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href={% static "css/homePage.css" %}>
     <link rel="stylesheet" href={% static "js/package/css/swiper.min.css" %}>
+    <script src={% static "js/vendor/three/three.js" %}></script>
+    <script src={% static "js/vendor/three/OrbitControls.js" %}></script>
+    <script src={% static "js/vendor/three/GLTFLoader.js" %}></script>
     <title> Givt's For Every One </title>
 </head>
 <body>
-    <div class="grid-container">
-        <div id="nav">
-            <div class="logo">
-                <h4>Givt</h4>
-            </div>
-            <ul class="nav-links">
-                <li> <a href="#">Home</a> </li>
-                <li> <a href="#">Categories</a> </li>
-                <li> <a href="#">Cart</a> </li>
-                <li> <a href="#">User</a> </li>
-            </ul>
-        </div>
-        <div class="hero">
-            <img src={% static "images/hero1.jpg" %} alt="Poster">
-        </div>
-    <div class="carousel">
 
-        <h4>Popular On Givt</h4>
-        <div class="swiper-container">
-         <div class="swiper-wrapper">
-            {% for product in products %}
-            <div class="swiper-slide">
-                <a href="{{ product.get_absolute_url }}">
-                    <img src="{% if product.image %}{{ product.image.url }}{% else %}{% static 'images/no_img.png' %}{% endif %}" alt="{{ product.name}">
-                </a>
-            </div>
-            {% endfor %}
-      <!-- Arrows -->
-  <div class="swiper-button-next"></div>
-  <div class="swiper-button-prev"></div>
-  </div>
+
+ 
+    
+<div class="grid-container">
+    <div id="nav">
+        <div class="logo">
+            <svg  id="Layer_1" style="enable-background:new 0 0 32 32;" version="1.1" viewBox="0 0 32 32" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M4,10h24c1.104,0,2-0.896,2-2s-0.896-2-2-2H4C2.896,6,2,6.896,2,8S2.896,10,4,10z M28,14H4c-1.104,0-2,0.896-2,2  s0.896,2,2,2h24c1.104,0,2-0.896,2-2S29.104,14,28,14z M28,22H4c-1.104,0-2,0.896-2,2s0.896,2,2,2h24c1.104,0,2-0.896,2-2  S29.104,22,28,22z"/></svg>
+            <h4>Givt</h4>
+        </div>
+        <ul class="nav-links">
+            <li><a href="">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g data-name="Layer 2"><g data-name="search"><rect width="24" height="24" opacity="0"/><path d="M20.71 19.29l-3.4-3.39A7.92 7.92 0 0 0 19 11a8 8 0 1 0-8 8 7.92 7.92 0 0 0 4.9-1.69l3.39 3.4a1 1 0 0 0 1.42 0 1 1 0 0 0 0-1.42zM5 11a6 6 0 1 1 6 6 6 6 0 0 1-6-6z"/></g></g></svg></a></li>
+            <li> <a href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.5,15a3,3,0,0,0-1.9-2.78l1.87-7a1,1,0,0,0-.18-.87A1,1,0,0,0,20.5,4H6.8L6.47,2.74A1,1,0,0,0,5.5,2h-2V4H4.73l2.48,9.26a1,1,0,0,0,1,.74H18.5a1,1,0,0,1,0,2H5.5a1,1,0,0,0,0,2H6.68a3,3,0,1,0,5.64,0h2.36a3,3,0,1,0,5.82,1,2.94,2.94,0,0,0-.4-1.47A3,3,0,0,0,21.5,15Zm-3.91-3H9L7.34,6H19.2ZM9.5,20a1,1,0,1,1,1-1A1,1,0,0,1,9.5,20Zm8,0a1,1,0,1,1,1-1A1,1,0,0,1,17.5,20Z"/></svg></a> </li>
+            <li> <a href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g data-name="Layer 2"><g data-name="person"><rect width="24" height="24" opacity="0"/><path d="M12 11a4 4 0 1 0-4-4 4 4 0 0 0 4 4zM18 21a1 1 0 0 0 1-1 7 7 0 0 0-14 0 1 1 0 0 0 1 1z"/></g></g></svg></a> </li>
+        </ul>
+    </div>
+    {% block home %}
+
+
+    {% endblock %}
 </div>
-        </div>
-            <div class="cards-container">
-                <div class="card">
-                    <img src={% static "images/new1.jpg" %} alt="Poster">
-                </div>
-                <div class="card">
-                    <img src={% static "images/new2.jpg" %} alt="Poster">
-                </div>
-                <div class="card">
-                    <img src={% static "images/new3.jpg" %} alt="Poster">
-                </div>
-                <div class="card">
-                    <img src={% static "images/new4.jpg" %} alt="Poster">
-                </div>
-                <div class="card">
-                    <img src={% static "images/new5.jpg" %} alt="Poster">
-                </div>
-                <div class="card">
-                    <img src={% static "images/new6.jpg" %} alt="Poster">
-            </div>
-        </div>
-        <div class="hero">Hero#2</div>
-        <div class="carousel">Carousel#2</div>
-        <div id="footer">
-            The UnderDog
-        </div>
-   
+
+
 
         <!-- Swiper JS -->
   <script src={% static "js/package/js/swiper.min.js" %}></script>
