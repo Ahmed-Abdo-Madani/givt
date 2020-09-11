@@ -47,24 +47,7 @@
 <div class="hero">
     <img src={% static "images/hero1.jpg" %} alt="Poster">
 </div>
-<div class="carousel">
 
-<h3>Popular On Givt</h3>
-<div class="swiper-container">
- <div class="swiper-wrapper">
-    {% for product in products %}
-    <div class="swiper-slide">
-        <a href="{{ product.get_absolute_url }}">
-            <img src="{% if product.image %}{{ product.image.url }}{% else %}{% static 'images/no_img.png' %}{% endif %}" alt="{{ product.name}">
-        </a>
-    </div>
-    {% endfor %}
-<!-- Arrows -->
-<div class="swiper-button-next"></div>
-<div class="swiper-button-prev"></div>
-</div>
-</div>
-</div>
     <div class="cards-container">
         <div class="card">
             <img src={% static "images/new1.jpg" %} alt="Poster">
@@ -87,8 +70,5 @@
 </div>
 <div class="hero">Hero#2</div>
 <div class="carousel">Carousel#2</div>
-<div id="footer">
-    The UnderDog
-</div>
 
 {% endblock %}

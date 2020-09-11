@@ -2,37 +2,14 @@
 {% load static %}
 
 {% block home %}
-
     <div  class="product-image">
            <div id="scene-container"></div>
         </div>
     <div class="product-details">
-            <h1>{{ product.name }}</h1>
-            <h2>
-                <a href="#">
-                    {{ product.category }}
-                </a>
-            </h2>
+            <h3>{{ product.name }}</h3>
+            <h4><a href="#">{{ product.category }}</a></h4>
             <p class="price">${{ product.price }}</p>
             <p class="desc"> {{ product.description|linebreaks }}</p>
-           
-            </div>
-    <div class="carousel">
-        <h2>Popular On Givt</h2>
-        <div class="swiper-container">
-         <div class="swiper-wrapper">
-            {% for product in products %}
-            <div class="swiper-slide">
-                <a href="{{ product.get_absolute_url }}">
-                    <img src="{% if product.image %}{{ product.image.url }}{% else %}{% static 'images/no_img.png' %}{% endif %}" alt="{{ product.name}">
-                </a>
-            </div>
-            {% endfor %}
-      <!-- Arrows -->
-  <div class="swiper-button-next"></div>
-  <div class="swiper-button-prev"></div>
-  </div>
-        </div>
-            </div>
+    </div>
             <script src={% static "js/app.js" %}></script>
 {% endblock %}

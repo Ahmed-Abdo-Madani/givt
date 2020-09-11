@@ -51,10 +51,23 @@
 
     {% endblock %}
 
+    <div class="carousel">
+      <h3>Popular On Givt</h3>
+      <div class="swiper-container">
+       <div class="swiper-wrapper">
+          {% for product in products %}
+            <div class="swiper-slide"><a href="{{ product.get_absolute_url }}"><img src="{% if product.image %}{{ product.image.url }}{% else %}{% static 'images/no_img.png' %}{% endif %}" alt="{{ product.name}"></a></div>
+          {% endfor %}
+      <!-- Arrows -->
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+      </div>
+    </div>
+  </div>
+
+    <div id="footer">The UnderDog</div>
+
 </div>
-
-
-
 
         <!-- Swiper JS -->
   <script src={% static "js/package/js/swiper.min.js" %}></script>
